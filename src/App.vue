@@ -1,14 +1,13 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import HomeView from '@/views/HomeView.vue';
+import TheNavBar from '@/components/TheNavBar.vue';
+</script>
 
 <template>
-  <div class="lp">
-    <header class="p-1">
-      UX/UI Challenge
-    </header>
-    <main class="p-2">
-      Test content with loan pro
-    </main>
-  </div>
+    <div class="lp">
+        <TheNavBar />
+        <HomeView />
+    </div>
 </template>
 
 <style scoped></style>
