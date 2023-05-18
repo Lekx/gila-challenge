@@ -26,4 +26,14 @@ describe('HomeView', () => {
 
         expect(wrapper.find('a.btn.btn-primary').text()).toEqual('Submit');
     });
+
+    it('hides the modal when button is clicked', async () => {
+        const wrapper = mount(SurveyModal);
+
+        const button = wrapper.find('a.btn.hide-btn');
+        await button.trigger('click');
+
+        const overlay = wrapper.find('.overlay');
+         expect(overlay.classes()).toContain('hide');
+    });
 });
