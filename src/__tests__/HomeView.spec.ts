@@ -20,4 +20,14 @@ describe('HomeView', () => {
 
         expect(wrapper.find('a.btn.btn-success').text()).toEqual('Participate');
     });
+
+    it('show the modal when button is clicked', async () => {
+        const wrapper = mount(HomeView);
+
+        const button = wrapper.find('a.btn.btn-success');
+        await button.trigger('click');
+
+        const overlay = wrapper.find('.overlay');
+         expect(overlay.classes()).toContain('show');
+    });
 });
