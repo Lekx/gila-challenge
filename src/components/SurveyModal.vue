@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue';
 import InputText from '@/components/InputText.vue';
+import InputSelect from '@/components/InputSelect.vue';
 import InputNumber from '@/components/InputNumber.vue';
 // Props defined for component:
 // showSurveyModal - to display the modal or not
@@ -11,6 +12,36 @@ const props = defineProps({
         default: false,
     },
 });
+const simpleList = [
+    {
+        list: [
+            'Watermelon',
+            'Orange',
+            'Banana',
+            'Kiwi',
+        ]
+    },
+];
+const groupList = [
+    {
+        title: 'Fruits',
+        list: [
+            'Watermelon',
+            'Orange',
+            'Banana',
+            'Kiwi',
+        ]
+    },
+    {
+        title: 'Vegetables',
+        list: [
+            'Lettuce',
+            'Cucumber',
+            'Cabbage',
+            'Tomato',
+        ]
+    }
+];
 
 // var that holds the modal class to show or hide the modal
 const modalStyleState = ref('hide');
@@ -37,25 +68,23 @@ const handleInputChange = (value: string) => {
         <div class="modal modal-md" id="survey-modal">
             <div class="ly-row ly-spacebetween-center mb-1">
                 <h1 class="h3 m-0">Supermarket Survey!</h1>
-                <a href="" class="btn btn-noborder btn-icon">
+                <a href="" class="btn btn-noborder btn-icon text-black">
                     <i class="lpi-close"></i><span>Close</span>
                 </a>
             </div>
             <div class="form">
-                <!-- form placeholder -->
-                <div class="ly-row">
-                    <InputNumber class="w-50" labelText="Select a Fruit" :max="9" type="integer" @input-change="handleInputChange" />
-                    <InputText class="w-50" labelText="Select a Food item" />
+                <div class="form-row">
+                    <InputSelect class="field" labelText="Select a Fruit" :list="simpleList" :searchable="false" @input-change="handleInputChange"/>
+                    <InputSelect class="field" labelText="Select a Food Item" :list="groupList" :searchable="true" @input-change="handleInputChange"/>
                 </div>
-                <div class="ly-row">
-                    <InputText class="w-50" labelText="Favorite Food" helperText="E.g. Seafood Pizza."
-                        defaultValue="mms wey" :max="80" />
-                    <InputText class="w-50" labelText="Food Budget" helperText="Solo numbers" :max="5" />
+                <div class="form-row">
+                    <InputText class="field" labelText="Favorite Food" helperText="E.g. Seafood Pizza." defaultValue="" :max="80" @input-change="handleInputChange"/>
+                    <InputNumber class="field" labelText="Food Budget" :max="9" type="currency" @input-change="handleInputChange" />
                 </div>
             </div>
             <div class="modal-footer text-right">
-                <a href="" class="btn hide-btn" @click="hideSurveyModal()">Cancel</a>
-                <a href="" class="btn btn-primary">Submit</a>
+                <a href="" class="btn btn-lg hide-btn" @click="hideSurveyModal()">Cancel</a>
+                <a href="" class="btn btn-lg btn-primary">Submit</a>
             </div>
         </div>
     </div>
@@ -73,7 +102,35 @@ const handleInputChange = (value: string) => {
 .hide {
     display: none;
 }
+.form-row{
+    widows: 100%;
+    display: flex;
+    .field{
+        
+        width: 50%;
+        padding: 10px 20px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .lp .overlay{
+        padding: 1rem;
+    }
+    #survey-modal{
+        width: 100%;
+    }
+    .form{
+        margin-bottom:40px;
+    }
+    .form-row{
+        flex-direction: column;
+        .field{
+            width: 100%;
+        }
+    }
+}
 </style>
+
 
 
 
