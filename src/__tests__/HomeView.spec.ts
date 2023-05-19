@@ -28,6 +28,6 @@ describe('HomeView', () => {
         await button.trigger('click');
 
         const overlay = wrapper.find('.overlay');
-         expect(overlay.classes()).toContain('show');
+        expect(overlay.classes()).toContain('show');
     });
 });
