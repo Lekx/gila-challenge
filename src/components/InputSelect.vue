@@ -2,7 +2,7 @@
 import { ref, watch } from 'vue';
 
 interface iGroup {
-    title: string;
+    title?: string | null;
     list: string[];
 }
 // Props defined for component:
@@ -61,7 +61,6 @@ const selectItem = (item: string) => {
 };
 
 watch(() => searchValue.value, (newValue) => {
-    console.log('called', newValue);
     if (!newValue || newValue === '') {
         resetListValues();
         return;
@@ -89,7 +88,7 @@ watch(() => searchValue.value, (newValue) => {
                 <i class="lpi-search"></i>
             </div>
             <div v-for="(group, index) in list" :key="index">
-                <label class="h6 text-gray pb-1">{{ group.title }}</label>
+                <label class="h6 text-gray pb-1" v-if="group.title">{{ group.title }}</label>
                 <span class="list-item d-block" v-for="(item, idx) in group.list" :key="idx" @click="selectItem(item)">
                     {{ item }}
                 </span>
@@ -132,10 +131,10 @@ watch(() => searchValue.value, (newValue) => {
 }
 .component-wrapper{
     position: relative;
+    z-index:2;
     .list-wrapper{
         background-color: white;
         padding: 10px;
-        // width: 300px;
         position: absolute;
         top:100%;
         left:0;
