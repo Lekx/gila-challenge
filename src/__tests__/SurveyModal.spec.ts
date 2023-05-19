@@ -34,6 +34,6 @@ describe('HomeView', () => {
         await button.trigger('click');
 
         const overlay = wrapper.find('.overlay');
-         expect(overlay.classes()).toContain('hide');
+        expect(overlay.classes()).toContain('hide');
     });
 });

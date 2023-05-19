@@ -40,7 +40,9 @@ const hideSurveyModal = () => {
                 <!-- form placeholder -->
             </div>
             <div class="modal-footer text-right">
-                <a href="" class="btn hide-btn" @click="hideSurveyModal()">Cancel</a>
+                <a href="" class="btn hide-btn" @click="hideSurveyModal()"
+                    >Cancel</a
+                >
                 <a href="" class="btn btn-primary">Submit</a>
             </div>
         </div>
