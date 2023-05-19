@@ -14,7 +14,8 @@ exports[`HomeView > should render the correct HTML 1`] = `
             <!--v-if--><input data-v-f6c8fbf5=\\"\\" class=\\"input-field py-1\\" type=\\"text\\" maxlength=\\"9\\">
           </div>
         </div>
-        <div data-v-dccb68fe=\\"\\" class=\\"w-50\\"><label class=\\"input-text d-block py-1 lead text-gray-dark\\">Select a Food item</label><input class=\\"input-field py-1\\" type=\\"text\\">
+        <div data-v-2f6f31ac=\\"\\" data-v-dccb68fe=\\"\\" class=\\"component-wrapper w-50\\"><label data-v-2f6f31ac=\\"\\" class=\\"input-text d-block py-1 lead text-gray-dark\\">Select a Food item</label>
+          <div data-v-2f6f31ac=\\"\\" class=\\"input-field-wrapper\\"><i data-v-2f6f31ac=\\"\\" class=\\"lpi-caret-down\\"></i><input data-v-2f6f31ac=\\"\\" class=\\"input-field py-1\\" type=\\"text\\" disabled=\\"\\" placeholder=\\"Select one\\"></div>
           <!--v-if-->
         </div>
       </div>
