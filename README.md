@@ -17,10 +17,16 @@ See [Vite Configuration Reference](https://vitejs.dev/config/).
 git clone git@github.com:Lekx/gila-challenge.git
 ```
 
-### Make sure you are on main branch
+### Switch to develop branch
 
 ```sh
-git branch
+git checkout develop
+```
+
+### Pull latest changes
+
+```sh
+git pull origin develop
 ```
 
 ### Install project dependencies
