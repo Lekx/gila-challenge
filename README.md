@@ -1,13 +1,29 @@
 # gila-challenge
-- Vue3 project
-- Typescript
-- LoanPro CSS Framework(http://css.loanpro.io/)
-- Jest
+
+-   Vue3 project
+-   Typescript
+-   LoanPro CSS Framework(http://css.loanpro.io/)
+-   Jest
+
 ## Customize configuration
 
 See [Vite Configuration Reference](https://vitejs.dev/config/).
 
 ## Project Setup
+
+### clone the project
+
+```sh
+git clone git@github.com:Lekx/gila-challenge.git
+```
+
+### Make sure you are on main branch
+
+```sh
+git branch
+```
+
+### Install project dependencies
 
 ```sh
 npm install
